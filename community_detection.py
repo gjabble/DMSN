@@ -1,18 +1,10 @@
 import networkx as nx
 from networkx.algorithms import community
 from networkx import edge_betweenness_centrality as betweenness
-import csv, os, shutil, pymysql
+import csv, os, shutil
 
 input_directory = os.path.join(os.getcwd(), 'co_occurrence_data')
 base_output_dir = os.path.join(os.getcwd(), 'communities')
-connection = pymysql.connect(
-    host='localhost',
-    user='root',
-    password=os.environ.get('MYSQL_PWD'),
-    db='ecs637u_digitalmedia',
-    charset='utf8mb4',
-    cursorclass=pymysql.cursors.DictCursor
-)
 
 if not os.path.isdir(base_output_dir):
     try:
@@ -74,20 +66,7 @@ for inp in input_data:
     except OSError:
         print("Failed to create output directory: {}".format(output_dir))
 
-    for index, community in enumerate(communities):
+    for index, cmnty in enumerate(communities):
         community_path = "{}_community_{}.csv".format(stream_type, index)
-        data = list()
-        with connection:
-            cursor = connection.cursor()
-            for c in community:
-                table_name = "glaston29_{}".format(stream_type)
-                query = "SELECT `tweet` FROM {} WHERE `hashtags` LIKE '%{}' OR `hashtags` LIKE '%{} ';".format(table_name, c, c)
-                print(query)
-                cursor.execute(query)
-                rows = cursor.fetchall()
-                for row in rows:
-                    data.append([c,row])
         with open(os.path.join(output_dir, community_path), "w") as f:
-            writer = csv.writer(f, delimiter="¶")
-            writer.writerow(["hashtag¶tweet"])
-            f.write("\n".join(data))
+            f.write("\n".join(cmnty))
