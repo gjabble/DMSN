@@ -1,0 +1,15 @@
+\BOOKMARK [1][-]{section.1}{Introduction}{}% 1
+\BOOKMARK [1][-]{section.2}{Background}{}% 2
+\BOOKMARK [2][-]{subsection.2.1}{Sentiment Analysis}{section.2}% 3
+\BOOKMARK [2][-]{subsection.2.2}{Community Detection}{section.2}% 4
+\BOOKMARK [2][-]{subsection.2.3}{EXTENSION: Page Rank and its application to network analysis}{section.2}% 5
+\BOOKMARK [1][-]{section.3}{Dataset}{}% 6
+\BOOKMARK [2][-]{subsection.3.1}{Basic Network Statistics}{section.3}% 7
+\BOOKMARK [1][-]{section.4}{Approach}{}% 8
+\BOOKMARK [2][-]{subsection.4.1}{Louvain Community Detection}{section.4}% 9
+\BOOKMARK [2][-]{subsection.4.2}{Sentiment Analysis: Na\357ve Bayes Classifier}{section.4}% 10
+\BOOKMARK [1][-]{section.5}{Results}{}% 11
+\BOOKMARK [1][-]{section.6}{Conclusions}{}% 12
+\BOOKMARK [1][-]{section*.2}{References}{}% 13
+\BOOKMARK [1][-]{section.7}{Styling figs and stuff}{}% 14
+\BOOKMARK [2][-]{subsection.7.1}{Figures and Tables}{section.7}% 15
