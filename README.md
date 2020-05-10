@@ -67,11 +67,6 @@ Prints network statistics to the terminal and produces a log-log graph of the no
 ## `plot_results.py`
 Plots the results found, so generates a plot for community detection and a plot for sentiment data. Sentiment data plots every stream on a single bar chart where each stream has three bars representing the total number of *positive*, *neutral*, and *negative* communities.
 
-__TODO__: 
-
-- scatter plot of community size vs tweet count
-- line graph of community size vs count similar to log-log above
-
 ## `tweet_classifier.pickle`
 The saved classifier. This is produced by running `./Classifier/naive_bayes_classifier.py` or `classify.py` which in turn runs the former if this file does not exist. 
 

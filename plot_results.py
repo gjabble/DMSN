@@ -10,7 +10,6 @@ from collections import Counter, OrderedDict
 plt.style.use('ggplot')
 
 def plot_sentiment():
-    fig, ax = plt.subplots(figsize=(10,6))
     INPUT_FILE = os.path.join(os.getcwd(), 'Sentiments', 'sentiments_overview.json')
     with open(INPUT_FILE) as f:
         data = json.load(f)
@@ -19,8 +18,16 @@ def plot_sentiment():
     positive_counts = list()
     neutral_counts = list()
     negative_counts = list()
+    community_size = list()
+    tweet_count = list()
     width = 0.25
+    colours = {
+        'positive': 'g',
+        'neutral': 'b',
+        'negative': 'r'
+    }
     for stream, communities in data.items():
+        fig, ax = plt.subplots(figsize=(10,6))
         if stream == "TF":
             stream = "Adaptive"
         elif stream == "BL":
@@ -33,14 +40,27 @@ def plot_sentiment():
         }
         for cidx, cdata in communities.items():
             sentiment = cdata['sentiment']
+            csize = cdata['community_size']
+            tweet_count = cdata['tweet_count']
             try:
                 counts[sentiment] += 1
+                ax.scatter(csize, tweet_count, c=colours[sentiment])
             except KeyError:
                 pass
+        ## Plot community size vs tweet count scatter plot
+        ax.set_yscale('log')
+        ax.set_xscale('log')
+        ax.set_title(f"{stream} stream: Community size vs Tweet Count")
+        ax.set_xlabel("Community Size (number of hashtags)")
+        ax.set_ylabel("Number of Tweets with hashtags")
+        plt.savefig(f"./Plots/{stream}_tweet_count_scatter.png")
+
         positive_counts.append(counts['positive'])
         neutral_counts.append(counts['neutral'])
         negative_counts.append(counts['negative'])
-
+    
+    ## Plot counts for each sentiment 'positive', 'neutral', and 'negative'
+    fig, ax = plt.subplots(figsize=(10,6))
     x = np.arange(len(labels))
     ax.bar(x, positive_counts, width, color = 'g', label="Positive")
     ax.bar(x + width, neutral_counts, width, color = 'b', label="Neutral")
@@ -97,5 +117,5 @@ def plot_communities():
     plt.savefig('./Plots/community_counts.png')
 
 if __name__ == "__main__":
-    #plot_sentiment()
+    plot_sentiment()
     plot_communities()
