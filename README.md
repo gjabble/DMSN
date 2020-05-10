@@ -64,8 +64,8 @@ Not actually sure whether this is still being used. **`TO BE UPDATED`**
 ## `network_stats.py`
 Prints network statistics to the terminal and produces a log-log graph of the node degree for every stream. 
 
-## `plot_sentiments.py`
-Plots sentiment data for every stream on a single bar chart. Each stream has three bars representing the total number of *positive*, *neutral*, and *negative* communities. 
+## `plot_results.py`
+Plots the results found, so generates a plot for community detection and a plot for sentiment data. Sentiment data plots every stream on a single bar chart where each stream has three bars representing the total number of *positive*, *neutral*, and *negative* communities.
 
 __TODO__: 
 
