@@ -17,7 +17,7 @@ random_stats = {
     }
 }
 
-if not os.path.isdir(OUTPUT_DIR):
+if os.path.isdir(OUTPUT_DIR):
     try:
         os.mkdir(OUTPUT_DIR)
     except FileExistsError:
