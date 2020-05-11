@@ -5,28 +5,34 @@ OUTPUT_DIR = os.path.join(os.getcwd(), 'Random Graphs', 'igraph')
 random_stats = {
     'BL': {
         'n': 10772,
-        'p': 0.000265 # p value to use to get similar number of edges for BL
+        'p': 0.000265, # p value to use to get similar number of edges for BL
+        'm': 15873
     },
     'AD': {
         'n': 24647,
-        'p': 0.00014 # p value to use to get similar number of edges for AD 
+        'p': 0.00014, # p value to use to get similar number of edges for AD 
+        'm': 42631
     },
     'EX': {
         'n': 16787,
-        'p': 0.0002 # p value to use to get similar number of edges for EX
+        'p': 0.0002, # p value to use to get similar number of edges for EX
+        'm': 27634
     }
 }
 
-if os.path.isdir(OUTPUT_DIR):
-    try:
-        os.mkdir(OUTPUT_DIR)
-    except FileExistsError:
-        print("Directory already exists. Not overwriting existing.")
-        sys.exit(0)
+try:
+    print("Creating directory...")
+    os.mkdir(OUTPUT_DIR)
+except FileExistsError:
+    print("Directory already exists. Not overwriting existing.")
+    sys.exit(0)
+
 g = Graph()
 for stream, data in random_stats.items():
     for i in range(3):
-        er_graph = g.Erdos_Renyi(data['n'], p=data['p'])
+        er_graph = g.Erdos_Renyi(data['n'], m=data['m'])
         out_file = os.path.join(OUTPUT_DIR, f"{stream}{i}.csv")
         with open(out_file, 'w') as f:
             er_graph.write_edgelist(f)
+            f.seek(0,0)
+            f.write("source target\n")
