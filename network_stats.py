@@ -24,6 +24,7 @@ for idx, e in enumerate(edge_lists):
     min_degree_count = len(min_degree_tags)
     print("=== {} STATS ===\n".format(e),
         "nodes: {}\n".format(len(g.vs)),
+        "edges: {}\n".format(len(g.es)),
         "max degree: {} `{}`\n".format(max_degree, max_degree_tags),
         "nodes with max degree: {}\n".format(max_degree_count),
         "min degree: {}\n".format(min_degree),
