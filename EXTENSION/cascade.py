@@ -27,7 +27,7 @@ def simulate_cascade(graph_path, threshold):
     for i in g.nodes():
         config.add_node_configuration('threshold', i, threshold) # set threshold to be the same for all nodes
     model.set_initial_status(config)
-    iterations = model.iteration_bunch(200) # execute 200 iterations 
+    iterations = model.iteration_bunch(50) # execute 50 iterations 
     return iterations
 
 OUTPUT_DIR = os.path.join(cwd, 'Cascades')
