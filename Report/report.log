@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2019.1.26)  5 MAY 2020 00:25
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2019.1.26)  14 MAY 2020 01:13
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -614,34 +614,32 @@ LaTeX Info: Redefining \nameref on input line 20.
 \openout3 = `report.out'.
 
 \GPT@outputbox=\box34
+LaTeX Font Info:    Try loading font information for U+msa on input line 65.
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 65.
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+
+LaTeX Warning: Citation `b1' on page 1 undefined on input line 74.
 
 
-LaTeX Warning: Citation `b1' on page 1 undefined on input line 67.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 78--79
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 80--81
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 82--83
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 84--85
+Underfull \hbox (badness 10000) in paragraph at lines 85--86
 
  []
 
 
-Underfull \hbox (badness 1365) in paragraph at lines 91--92
-\OT1/ptm/m/n/10 it be-comes dif-fi-cult to iden-tify com-mu-ni-ties. Iden-ti-fy
--ing
+Underfull \hbox (badness 10000) in paragraph at lines 87--88
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 89--90
+
  []
 
 
@@ -649,95 +647,91 @@ Underfull \hbox (badness 10000) in paragraph at lines 91--92
 
  []
 
+
+Underfull \hbox (badness 1365) in paragraph at lines 98--99
+\OT1/ptm/m/n/10 it be-comes dif-fi-cult to iden-tify com-mu-ni-ties. Iden-ti-fy
+-ing
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 98--99
+
+ []
+
 [1{/usr/local/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 
 ]
-LaTeX Font Info:    Try loading font information for U+msa on input line 106.
-
-(/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Try loading font information for U+msb on input line 106.
-
-(/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-Underfull \hbox (badness 10000) in paragraph at lines 105--107
+Underfull \hbox (badness 10000) in paragraph at lines 112--114
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 114--115
+Underfull \hbox (badness 10000) in paragraph at lines 121--122
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 116--117
+Underfull \hbox (badness 10000) in paragraph at lines 123--124
 
  []
 
 
-Underfull \hbox (badness 2253) in paragraph at lines 123--124
+Underfull \hbox (badness 2253) in paragraph at lines 130--131
 []\OT1/ptm/m/n/10 The PageR-ank com-pu-ta-tions re-quire sev-eral it-er-a-tions
 
  []
 
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 134.
+[2]
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 141.
 
-(/usr/local/texlive/2018/texmf-dist/tex/latex/psnfss/ot1pcr.fd
+ (/usr/local/texlive/2018/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
-Underfull \hbox (badness 6078) in paragraph at lines 134--135
+Underfull \hbox (badness 6078) in paragraph at lines 141--142
 \OT1/ptm/m/n/10 query \OT1/pcr/m/n/10 SELECT 'hashtags' FROM <table>; \OT1/ptm/
 m/n/10 where
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 134--135
+Underfull \hbox (badness 10000) in paragraph at lines 141--142
 
  []
 
-[2]
-<./images/degree_distribution.png, id=105, 722.7pt x 433.62pt>
+<./images/degree_distribution.png, id=180, 722.7pt x 433.62pt>
 File: ./images/degree_distribution.png Graphic file (type png)
 <use ./images/degree_distribution.png>
 Package pdftex.def Info: ./images/degree_distribution.png  used on input line 1
-39.
+46.
 (pdftex.def)             Requested size: 252.0pt x 151.20026pt.
 
-Overfull \hbox (3.4232pt too wide) in paragraph at lines 156--156
+Overfull \hbox (3.4232pt too wide) in paragraph at lines 163--163
 []|\OT1/ptm/m/n/10 10,777| 
  []
 
 
-Overfull \hbox (3.4232pt too wide) in paragraph at lines 156--156
-[]|\OT1/ptm/m/n/10 24,651| 
+Overfull \hbox (3.4232pt too wide) in paragraph at lines 163--163
+[]|\OT1/ptm/m/n/10 24,653| 
  []
 
 
-Overfull \hbox (3.4232pt too wide) in paragraph at lines 156--156
+Overfull \hbox (3.4232pt too wide) in paragraph at lines 163--163
 []|\OT1/ptm/m/n/10 16,787| 
  []
 
 
-Overfull \hbox (3.4232pt too wide) in paragraph at lines 156--156
+Overfull \hbox (3.4232pt too wide) in paragraph at lines 163--163
 []|\OT1/ptm/m/n/10 24,549| 
  []
 
 
-Overfull \hbox (3.4232pt too wide) in paragraph at lines 156--156
+Overfull \hbox (3.4232pt too wide) in paragraph at lines 163--163
 []|\OT1/ptm/m/n/10 86,857| 
  []
 
 
-Overfull \hbox (3.4232pt too wide) in paragraph at lines 156--156
+Overfull \hbox (3.4232pt too wide) in paragraph at lines 163--163
 []|\OT1/ptm/m/n/10 64,055| 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 161--162
-
  []
 
 
@@ -745,15 +739,249 @@ Underfull \hbox (badness 10000) in paragraph at lines 168--169
 
  []
 
-[3 <./images/degree_distribution.png>]
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 252.
 
+Underfull \hbox (badness 10000) in paragraph at lines 175--176
+
+ []
+
+[3 <./images/degree_distribution.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 183--184
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 185--186
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 193--193
+[]|\OT1/ptm/b/n/10 Random
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 193--196
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 193--196
+
+ []
+
+
+Underfull \hbox (badness 1701) in paragraph at lines 193--196
+\OT1/ptm/m/n/10 The Net-workX Python li-brary [[]6[]] was utilised for the
+ []
+
+
+Underfull \hbox (badness 6893) in paragraph at lines 193--196
+\OT1/ptm/m/n/10 of the clus-ter-ing co-ef-fi-cients and path lengths. The
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 200--201
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 202--203
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 210--211
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 228--229
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 235--238
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 235--238
+
+ []
+
+<./images/random_ad_clustering.png, id=197, 604.2575pt x 406.51875pt>
+File: ./images/random_ad_clustering.png Graphic file (type png)
+<use ./images/random_ad_clustering.png>
+Package pdftex.def Info: ./images/random_ad_clustering.png  used on input line 
+241.
+(pdftex.def)             Requested size: 252.0pt x 169.53333pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 252--253
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 254--255
+
+ []
+
+[4]
+Underfull \hbox (badness 10000) in paragraph at lines 261--264
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 261--264
+
+ []
+
+
+Underfull \hbox (badness 2707) in paragraph at lines 261--264
+\OT1/ptm/m/n/10 The av-er-age num-ber of steps along the short-est path
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 277--277
+[]|\OT1/ptm/b/n/10 Nodes
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 277--277
+\OT1/ptm/b/n/10 re-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 277--277
+[]|\OT1/ptm/b/n/10 Path
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 277--277
+[]|\OT1/ptm/b/n/10 Average
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 277--277
+\OT1/ptm/b/n/10 node
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 268--278
+
+ []
+
+<./images/robust_ad_path.png, id=205, 604.2575pt x 317.185pt>
+File: ./images/robust_ad_path.png Graphic file (type png)
+<use ./images/robust_ad_path.png>
+Package pdftex.def Info: ./images/robust_ad_path.png  used on input line 280.
+(pdftex.def)             Requested size: 252.0pt x 132.27785pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 284--285
+
+ []
+
+<./images/robust_ad_component.png, id=206, 604.2575pt x 318.18875pt>
+File: ./images/robust_ad_component.png Graphic file (type png)
+<use ./images/robust_ad_component.png>
+Package pdftex.def Info: ./images/robust_ad_component.png  used on input line 2
+89.
+(pdftex.def)             Requested size: 252.0pt x 132.69646pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 307--307
+[]|\OT1/ptm/b/n/10 Nodes
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 307--307
+\OT1/ptm/b/n/10 re-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 307--307
+[]|\OT1/ptm/b/n/10 Path
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 307--307
+[]|\OT1/ptm/b/n/10 Average
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 307--307
+\OT1/ptm/b/n/10 node
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 298--308
+
+ []
+
+<./images/robust_random_path.png, id=207, 604.2575pt x 314.17375pt>
+File: ./images/robust_random_path.png Graphic file (type png)
+<use ./images/robust_random_path.png>
+Package pdftex.def Info: ./images/robust_random_path.png  used on input line 31
+0.
+(pdftex.def)             Requested size: 252.0pt x 131.02205pt.
+<./images/robust_random_component.png, id=208, 604.2575pt x 317.185pt>
+File: ./images/robust_random_component.png Graphic file (type png)
+<use ./images/robust_random_component.png>
+Package pdftex.def Info: ./images/robust_random_component.png  used on input li
+ne 317.
+(pdftex.def)             Requested size: 252.0pt x 132.27785pt.
+[5 <./images/random_ad_clustering.png> <./images/robust_ad_path.png> <./images/
+robust_ad_component.png>]
+<./images/pagerank_ad.png, id=217, 772.8072pt x 435.0654pt>
+File: ./images/pagerank_ad.png Graphic file (type png)
+<use ./images/pagerank_ad.png>
+Package pdftex.def Info: ./images/pagerank_ad.png  used on input line 329.
+(pdftex.def)             Requested size: 252.0pt x 141.8659pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 333--334
+
+ []
+
+<./images/pagerank_random1.png, id=218, 773.13844pt x 422.32782pt>
+File: ./images/pagerank_random1.png Graphic file (type png)
+<use ./images/pagerank_random1.png>
+Package pdftex.def Info: ./images/pagerank_random1.png  used on input line 343.
+
+(pdftex.def)             Requested size: 252.0pt x 137.65445pt.
+<./images/pagerank_random2.png, id=219, 772.38562pt x 438.8897pt>
+File: ./images/pagerank_random2.png Graphic file (type png)
+<use ./images/pagerank_random2.png>
+Package pdftex.def Info: ./images/pagerank_random2.png  used on input line 347.
+
+(pdftex.def)             Requested size: 252.0pt x 143.1933pt.
+<./images/pagerank_random3.png, id=220, 773.89125pt x 438.8897pt>
+File: ./images/pagerank_random3.png Graphic file (type png)
+<use ./images/pagerank_random3.png>
+Package pdftex.def Info: ./images/pagerank_random3.png  used on input line 351.
+
+(pdftex.def)             Requested size: 252.0pt x 142.91203pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 355--363
+
+ []
+
+[6 <./images/robust_random_path.png> <./images/robust_random_component.png> <./
+images/pagerank_ad.png> <./images/pagerank_random1.png> <./images/pagerank_rand
+om2.png> <./images/pagerank_random3.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 373--374
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 375--376
+
+ []
+
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 465.
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/psnfss/omsptm.fd
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 252.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 465.
 
 
 ** Conference Paper **
@@ -766,30 +994,28 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 263.
-[4
-
-]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 263.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 476.
+[7]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 476.
  (./report.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 263.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 263.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 476.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 476.
 Package rerunfilecheck Info: File `report.out' has not changed.
-(rerunfilecheck)             Checksum: AAEE0E5BCD1A56897B70960AB173D947;928.
+(rerunfilecheck)             Checksum: D5CF6AA27DBACD65E55E67D7D743D3B7;2469.
 
 
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 263.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 476.
  ) 
 Here is how much of TeX's memory you used:
- 8084 strings out of 492649
- 119648 string characters out of 6129622
- 221274 words of memory out of 5000000
- 11826 multiletter control sequences out of 15000+600000
- 44451 words of font info for 90 fonts, out of 8000000 for 9000
+ 8189 strings out of 492649
+ 122103 string characters out of 6129622
+ 226112 words of memory out of 5000000
+ 11895 multiletter control sequences out of 15000+600000
+ 45529 words of font info for 91 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 28i,11n,35p,1190b,342s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 28i,11n,35p,1190b,337s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
 exlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/te
 xlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texl
@@ -802,10 +1028,10 @@ st/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2018/texmf-dist/fonts/t
 ype1/urw/times/utmbi8a.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/urw/
 times/utmr8a.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/urw/times/utmr
 i8a.pfb>
-Output written on report.pdf (4 pages, 181655 bytes).
+Output written on report.pdf (7 pages, 399394 bytes).
 PDF statistics:
- 176 PDF objects out of 1000 (max. 8388607)
- 147 compressed objects within 2 object streams
- 35 named destinations out of 1000 (max. 500000)
- 126 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 297 PDF objects out of 1000 (max. 8388607)
+ 249 compressed objects within 3 object streams
+ 61 named destinations out of 1000 (max. 500000)
+ 323 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -26,7 +26,9 @@
 \author{
 \IEEEauthorblockN{Domantas Miliauskas}
 \IEEEauthorblockA{\href{mailto:d.miliauskas@se16.qmul.ac.uk}{d.miliauskas@se16.qmul.ac.uk} \\
-Report writing \\
+Introduction, extension work, \\
+tabulating results, graph drawing,\\
+report writing \\
 25\%
 }
 
@@ -34,7 +36,9 @@ Report writing \\
 
 \IEEEauthorblockN{Gurpal Jabble}
 \IEEEauthorblockA{\href{mailto:g.jabble@se16.qmul.ac.uk}{g.jabble@se16.qmul.ac.uk} \\
-Report writing \\
+Problem formulation, algorithm implementation, \\
+performing analyses, tabulating results, \\
+graph drawing, report writing \\
 25\%
 }
 
@@ -42,7 +46,9 @@ Report writing \\
 
 \IEEEauthorblockN{Harvey Randall}
 \IEEEauthorblockA{\href{mailto:h.randall@se16.qmul.ac.uk}{h.randall@se16.qmul.ac.uk} \\
-Report writing \\
+Algorithm implementation, performing analyses, \\
+extension work, tabulating results, graph drawing, \\
+report writing, \LaTeX writeup \\
 25\%
 }
 
@@ -50,7 +56,8 @@ Report writing \\
 
 \IEEEauthorblockN{Mehmet Keven}
 \IEEEauthorblockA{\href{mailto:m.e.keven@se17.qmul.ac.uk}{m.e.keven@se17.qmul.ac.uk} \\
-Report writing \\ 
+Related work, extension work, \\
+report writing \\ 
 25\%
 }}
 
@@ -69,7 +76,7 @@ Abstract?
 
 \section{Introduction}
 	{
-		In this report, we gain further insight into three Glastonbury festival twitter datasets that consist of tweets collected through different stream collection techniques; Baseline (BL), Adaptive (AD), and Extra (EX). We aim to implement the Girvan-Newman community detection algorithm on each dataset to detect topic clusters, which will be analysed based on sentiment using a Naïve Bayes classifier to determine whether a given cluster contains ‘Good’ or ‘Bad’ tweets.
+		The aim of this report is to gain further insight into three Glastonbury festival twitter datasets that consist of tweets collected through different stream collection techniques; Baseline (BL), Adaptive (AD) and Extra (EX). We aim to implement a community detection algorithm on each dataset to detect topic clusters, which will be analysed based on sentiment using Naive Bayes classification methods to determine whether a given cluster contains ‘Good’, ‘Neutral’ or ‘Bad’ tweets.
 	\par}
 
 \section{Background}
@@ -145,7 +152,7 @@ Abstract?
 		\begin{tabularx}{0.95\linewidth}{| l | X | X | X |}
 			\hline
 			 \, & \textbf{BL} & \textbf{AD} & \textbf{EX} \\ \hline
-			 \textbf{Number of Nodes} & 10,777 & 24,651 & 16,787 \\ \hline
+			 \textbf{Number of Nodes} & 10,777 & 24,653 & 16,787 \\ \hline
 			 \textbf{Number of Edges} & 24,549 & 86,857 & 64,055 \\ \hline
 			 \textbf{Network Diameter} & 8 & 9 & 9 \\ \hline
 			 \textbf{Avg. Path Length} & 2.61 & 3.090 & 3.292 \\ \hline
@@ -169,10 +176,213 @@ Abstract?
 			
 The classifier is implemented as follows. It loads in a train and test data set. The test dataset is the set of tweets for a given community and the train data set is a precompiled set of words/phrases that are labelled (‘positive’, ‘negative’ or ‘neutral’). The training data set is used to train the classifier based on training features that are extracted from the train data set. Once the classifier has been trained, it can then be used to identify the overall sentiment of the unseen given test data set, which in our case is the set of tweets for a particular community. The classifier goes through the community tweets and applies a label to each based on what it thinks the sentiment of it is. When this has been completed, the labels are summed and the label with the highest count is considered the overall sentiment of the community.
 		\par}
+		
+	\subsection{EXTENSION}		
+		\subsubsection{Task 1: Path Length and Clustering Coefficients}
+			{
+				This section of the extension work looks at the difference between the path lengths and clustering coefficients of the Adaptive network in comparison to the average of three generated random graphs with the same number of nodes and a similar number of edges. \\
+ 
+				The random graphs were generated using the Erdos-Renyi model in which each edge of a given node has a fixed probability of being absent or present, independently of the other edges. To achieve a number of edges close to that of the Adaptive network, the probability of each random network was set to 0.000029. This produced the given graphs: \\
+				
+			\begin{tabularx}{0.95\linewidth}{| p{0.2\linewidth} | X | X |}
+				\hline
+				\textbf{Random Network} & \textbf{Number of Nodes} & \textbf{Number of Edges} \\ \hline
+				1 & $24,653$ & $91,125$ \\ \hline
+				2 & $24,653$ & $91,138$ \\ \hline
+				3 & $24,653$ & $90,676$ \\ \hline
+			\end{tabularx}
+			\\ \\ \\
+			The NetworkX Python library \cite{networkx} was utilised for the creation of the three random graphs and the computation of the clustering coefficients and path lengths. The \texttt{gnp\_random\_graph(n,p)} method was used to generate the three random graphs, and in order to read the Adaptive network into NetworkX, it was converted from a Gephi network to Graphml which is compatible with NetworkX.
+			\par}
+			
+		\subsubsection{Task 2: Which is more robust?}
+			{
+				Network robustness can be defined as the ability of a network to continue performing well when it is subject to failures or attacks \cite{robustness}. In this section, the network robustness of the AD dataset will be assessed in comparison to the robustness of three random networks constructed in the G(n,p) Erdős–Rényi model. \\
+
+				In order to assess the robustness of the networks, a targeted attack was performed by removing nodes based on node degree. The top 0.01\%, 0.1\%, 1\% and 10\% highest degree nodes were removed and the effect of this on the giant component of the networks was recorded. After removing the nodes each time, the number of nodes, edges, average path length and average node degree was recorded of the new giant component. \\
+
+				The method involved importing the datasets into Gephi, deleting the top \% highest degree nodes using the data laboratory feature. The giant component was then shown using the filtering tool and the relevant statistics were computed.
+			\par}
+		
+		
+		\subsubsection{Task 3: PageRank}	
+			{
+				This task will examine the computed average page rank values for the original AD dataset and the three randomly generated networks. \\
+				
+				The PageRank values were calculated using Gephi. The probability p, which is used to simulate the user randomly restarting the web surfing, was set to 0.85, and the stopping criterion value was set to 0.001.
+			\par}
+			
+			
+		\subsubsection{Task 4: Cascade}
+			
+			
 
 \section{Results}
+	\subsection{Community Detection}
+	
+	\subsection{Sentiment Analysis}
+	
+	\subsection{EXTENSION}
+		\subsubsection{Task 1: Clustering Coefficient}
+			{
+				The average clustering coefficient was then computed for each network by dividing the sum of all clustering coefficients by the number of nodes available. The results of the Adaptive network and the average of the three random networks are provided in the table below. \\
+				
+				\begin{tabularx}{0.95\linewidth}{| X | X |}
+					\hline
+					\, & \textbf{Average Clustering Coefficient} \\ \hline
+					\textbf{AD Network} & $0.6109340628572504$ \\ \hline
+					\textbf{Random Network Average} & $0.0002252434124308$ \\ \hline
+				\end{tabularx} 
+				\\ \\ \\
+				It is evident that the average clustering coefficient over all of the nodes in the Adaptive network are significantly higher than the average of the three random networks, which suggests that the neighbouring nodes in the Adaptive network are more densely connected.  Evidence suggests that nodes tend to establish more tightly knit groups in real-world networks, such as the Adaptive network, in comparison to random networks which establish links between two nodes at random \cite{hollandleinhardt}.
+			\par}
+			
+			\begin{figure}[htbp]
+				\centerline{\includegraphics[width=\linewidth]{./images/random_ad_clustering.png}}
+				\caption{The distributions of clustering coefficients compared between a random graph and AD graph.}
+				\label{random_clustering}
+			\end{figure}
+			
+			{
+				As illustrated in the figure above, the clustering coefficient of each node in the Adaptive graph is frequently high which further implies that the real-world social network has tightly knit groups in comparison to those of the random graphs which consists of nodes most frequently distributed in the low clustering coefficients.
+			\par}
+		
+		\subsubsection{Task 1: Path Length}
+			{
+				The same process was utilised as discussed in the clustering coefficient section to generate the three random networks and read in the Adaptive network into NetworkX to compute the average path length. \\
+				
+				To obtain the averages, the NetworkX \texttt{shortest\_path} function was used to compute the shortest paths between each source and target node in a given network which were then stored in a list. The sum of the shortest paths were then divided by the total number of entries in the list, which provided the average path length. This process was used for the Adaptive network and the three random networks. \\
 
+				\begin{tabularx}{0.95\linewidth}{| X | X |}
+					\hline
+					\, & \textbf{Average Path Length} \\ \hline
+					\textbf{AD Network} & $3.090$ \\ \hline
+					\textbf{Random Network Average} & $5.288$ \\ \hline
+				\end{tabularx}
+				\\ \\ \\
+				The average number of steps along the shortest path for all possible pairs of the network nodes were significantly less in the Adaptive network. This further ties in with the evidence provided for real-world networks having a higher clustering coefficient when compared to random networks as a tightly knitted network also implies that traversal through the network to get from a given source to destination node will be shorter.
+			\par}
+			
+		\subsubsection{Task 2: Which is more robust? (AD Dataset)}
+			{
+				This section shows the results of removing nodes on the AD dataset. The impact of removing nodes on the average path length and average degree is represented with the following graph. \\ \\
+				\begin{tabularx}{0.95\linewidth}{| X | X | X | X | X |}
+					\hline
+					\textbf{Nodes removed} & \textbf{Number of nodes} & \textbf{Number of edges} & \textbf{Path length} & \textbf{Average node degree} \\ \hline
+					$0\%$ & $23,733$ & $86,355$ & $3.09$ & $7.277$ \\ \hline
+					$0.01\%$ & $20,773$ & $76,809$ & $3.369$ & $7.395$ \\ \hline
+					$0.1\%$ & $15,861$ & $55,248$ & $4.141$ & $6.967$ \\ \hline
+					$1\%$ & $11,000$ & $28,444$ & $6.279$ & $5.172$ \\ \hline
+					$10\%$ & $12,135$ & $18,861$ & $2.966$ & $3.109$ \\ \hline
+				\end{tabularx}
+			\par}
+			\begin{figure}[htbp]
+				\centerline{\includegraphics[width=\linewidth]{./images/robust_ad_path.png}}
+				\label{robust_ad_path}
+			\end{figure}
+			{
+				The graph shows that as nodes were removed from the network, the average node degree decreased of the resulting giant component each time. The graph also shows that as nodes were removed, the average path length increased up until 1\% of the highest degree nodes were removed. At 10\% node removal, the average path length decreased from 6.279 to 2.966. \\
+				
+				The impact of removing nodes on the number of nodes and edges (size) of the resulting giant component each time is shown by the following graph.
+			\par}
+			\begin{figure}[htbp]
+				\centerline{\includegraphics[width=\linewidth]{./images/robust_ad_component.png}}
+				\label{robust_ad_component}
+			\end{figure}
+			{
+				The graph shows that as nodes were removed, the number of edges of the resulting giant component decreased each time. Similarly, the number of nodes also decreases each time up until 1\%. However, at 10\% node removal, the number of nodes in the giant component increased from 11,000 to 12,135.
+			\par}
+			
+		\subsubsection{Task 2: Which is more robust? (Random Graphs)}
+			{
+				This section shows the average results of removing nodes of the three generated random networks with comparable nodes/edges to the AD dataset. The impact of removing nodes on the average path length and node degree of the resulting giant component is shown below. \\ \\
+				\begin{tabularx}{0.95\linewidth}{| X | X | X | X | X |}
+					\hline
+					\textbf{Nodes removed} & \textbf{Number of nodes} & \textbf{Number of edges} & \textbf{Path length} & \textbf{Average node degree} \\ \hline
+					$0\%$ & $24,638$ & $91,125$ & $5.284$ & $7.397$ \\ \hline
+					$0.01\%$ & $24,636$ & $91,086$ & $5.296$ & $7.395$ \\ \hline
+					$0.1\%$ & $24,613$ & $90,683$ & $5.284$ & $7.369$ \\ \hline
+					$1\%$ & $24,389$ & $87,324$ & $5.374$ & $7.161$ \\ \hline
+					$10\%$ & $22,132$ & $62,981$ & $6.038$ & $5.691$ \\ \hline
+				\end{tabularx}
+			\par}
+			\begin{figure}[htbp]
+				\centerline{\includegraphics[width=\linewidth]{./images/robust_random_path.png}}
+				\label{robust_random_path}
+			\end{figure}
+			{
+				The graph shows that average path length increases slightly as nodes are removed, with the largest increase from 1\% to 10\% node removal. Similarly, the average node degree decreases slightly with the largest decrease from 1\% to 10\% node removal. The impact on the size of the giant component for the random graphs is shown in the following graph.
+			\par}
+			\begin{figure}[htbp]
+				\centerline{\includegraphics[width=\linewidth]{./images/robust_random_component.png}}
+				\label{robust_random_component}
+			\end{figure}
+			{
+				The graph shows that the number of nodes and edges both decreases as nodes were removed. The largest decrease occurred in the number of edges from 1\% to 10\% node removal.
+			\par}
+		
+		\subsubsection{Task 3: PageRank (AD Dataset)}
+			{
+				The following graph represents the distribution of page rank values for each node in the original AD dataset.
+			\par}
+			\begin{figure}[htbp]
+				\centerline{\includegraphics[width=\linewidth]{./images/pagerank_ad.png}}
+				\label{pagerank_ad}
+			\end{figure}
+			{
+				The graph shows that the page rank values for this dataset were heavily positively skewed. This is due to the fact that the majority of the nodes scored very low with a value of 0 after the page rank algorithm was conducted. $99.96\%$ of the nodes fell within the range $[0, 0.0002593]$. This is because most of these hashtags were random and not very common in the dataset compared to a hashtag such as \texttt{glastonbury}. Only $11$ nodes fell within ranges higher than this. The highest ranking node was the node corresponding to the hashtag \texttt{glastonbury} at a value of $0.039718$. This is because a large portion of the people at the Glastonbury event were tweeting with this hashtag, hence this node receiving many more links than other nodes, resulting in having more importance.\\
+				
+				The original AD dataset had an average page rank value $0.0000402863748833827$.
+			\par}
+			
+		\subsubsection{Task 3: PageRank (Random Graphs)}
+			{
+				The PageRank algorithm was applied to the three randomly generated networks. The following histograms show the distribution of the page rank scores of the nodes in the network.
+			\par}
+			\begin{figure}[htbp]
+				\centerline{\includegraphics[width=\linewidth]{./images/pagerank_random1.png}}
+				\label{pagerank_random1}
+			\end{figure}
+			\begin{figure}[htbp]
+				\centerline{\includegraphics[width=\linewidth]{./images/pagerank_random2.png}}
+				\label{pagerank_random2}
+			\end{figure}
+			\begin{figure}[htbp]
+				\centerline{\includegraphics[width=\linewidth]{./images/pagerank_random3.png}}
+				\label{pagerank_random3}
+			\end{figure}
+			{
+				As seen in the graphs, the distributions are much more uniform than the original AD dataset. The average page rank scores of the generated graphs are shown in the following table. \\ \\
+				\begin{tabularx}{0.95\linewidth}{| X | X |}
+					\hline
+					\textbf{Random Graph} & \textbf{Average Page Rank} \\ \hline
+					$1$ & $0.0000405641098446437$ \\ \hline
+					$2$ & $0.0000405856568854253$ \\ \hline
+					$3$ & $0.0000405617977528091$ \\ \hline
+				\end{tabularx}
+			\par}
+			
+		\subsubsection{Task 4: Cascade}	
+			
+			
+			
 \section{Conclusions}
+	\subsection{EXTENSION}
+		\subsubsection{Task 2: Which is more robust?}
+			{
+				The robustness of a network can be assessed by its level of connectivity. The quantitative measures used in this project to assess the robustness of the networks are average path length. These measures are being used under the fact that the shorter the path length, the more robust the network is \cite{robustness}. \\
+				
+The average path length of the random graphs increased from 5.284 to 5.374 resulting in a 1.7\% increase. Looking at the original AD dataset, the path length increased from 3.09 to 6.279 equating to a 103.2\% increase. In this period, the random graph is much more robust. However, considering the change from 1\% to 10\%, the AD dataset actually decreased by 52.7\%. \\
+
+Overall, the AD dataset actually became more robust after 10\% node removal whereas the random graph became less robust with 10\% node removal. However, the rate at which the random graph became less robust was significantly lower than the AD dataset. Across all values computed, The AD dataset’s giant component statistics increased more each time meaning it responded more erratically than the random graphs. 
+			\par}
+		
+		\subsubsection{Task 3: PageRank}
+			{
+				The page rank values for the AD dataset averaged out to a value of $0.0000402863748833827$. This value is comparable to the random graphs shown in the above table. 
+			\par}
+			
+		\subsubsection{Task 4: Cascade}
 
 \section*{References}
 
@@ -201,6 +411,9 @@ For papers published in translation journals, please give the English
 	\bibitem{louvain} V. D. Blondel, J. Guillaume, R. Lambiotte, and E. Lefebvre. "Fast unfolding of communities in large networks". Journal of Statistical Mechanics: Theory and Experiment, Oct 2008, 2008 (10)
 	\bibitem{strim} L. Tokarchuk, X. Wang, S. Poslad. "Piecing together the puzzle: Improving event content coverage for real-time sub-event detection using adaptive microblog crawling". PLoS ONE 12 (11)
 	\bibitem{igraph} G. Csardi, and T. Nepusz. "The igraph software package for complex network research". InterJournal, 2006, Complex Systems, pp. 1695
+	\bibitem{networkx} A. Hagberg, D. Schult, and P. Swart, “Exploring network structure, dynamics, and function using NetworkX”, in Proceedings of the 7th Python in Science Conference (SciPy2008), Gäel Varoquaux, Travis Vaught, and Jarrod Millman (Eds), (Pasadena, CA USA), pp. 11–15, Aug 2008
+	\bibitem{hollandleinhardt} P. Holland, and S. Leinhardt. "Transitivity in Structural Models of Small Groups". Comparative Group Studies, 1971, 2(2), pp. 107–124.
+	\bibitem{robustness} W. Ellens, and R. Kooji. "Graph measures and network robustness".  arXiv:1311.5064, Nov 2013
 	%\bibitem{b1} G. Eason, B. Noble, and I. N. Sneddon, ``On certain integrals of Lipschitz-Hankel type involving products of Bessel functions,'' Phil. Trans. Roy. Soc. London, vol. A247, pp. 529--551, April 1955.
 	%\bibitem{b2} J. Clerk Maxwell, A Treatise on Electricity and Magnetism, 3rd ed., vol. 2. Oxford: Clarendon, 1892, pp.68--73.
 	%\bibitem{b3} I. S. Jacobs and C. P. Bean, ``Fine particles, thin films and exchange anisotropy,'' in Magnetism, vol. III, G. T. Rado and H. Suhl, Eds. New York: Academic, 1963, pp. 271--350.
